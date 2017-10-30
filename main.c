@@ -41,7 +41,6 @@ int main(){
 	read(fd, random2, sizeof(random2));
 	printf("random2:\n");
 	for(i = 0; i < 10; i++){
-		random[i] = random_gen();
 		printf("\trandom2[%d]: %d\n", i, random[i]);
 	}
 	close(fd);
