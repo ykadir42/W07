@@ -25,7 +25,7 @@ int random_gen(){
 int main(){
 	int random[10];
 	int i;
-	printf("random:\n");
+	printf("Generating random numbers:\n");
 	for(i = 0; i < 10; i++){
 		random[i] = random_gen();
 		printf("\trandom[%d]: %d\n", i, random[i]);
@@ -36,10 +36,12 @@ int main(){
 		printf("errno: %d\n", errno);
 		printf("error: %s\n", strerror(errno));
 	}
+	printf("Writing numbers to file\n");
 	write(fd, random, sizeof(random));
 	int random2[10];
+	printf("Reading numbers from file\n");
 	read(fd, random2, sizeof(random2));
-	printf("random2:\n");
+	printf("Verification that written values were the same:\n");
 	for(i = 0; i < 10; i++){
 		printf("\trandom2[%d]: %d\n", i, random[i]);
 	}
